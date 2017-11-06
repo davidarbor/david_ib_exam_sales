@@ -19,8 +19,8 @@ public class SalesPerson{
         return mID;
     }
     public void setSalesHistory(Sales sale){
-        mCount++;
         salesHistory[mCount]=sale;
+        mCount++;
     }
     public Sales[] getSalesHistory(){
         return salesHistory;
@@ -35,9 +35,15 @@ public class SalesPerson{
         return salesValue;
     }
     public Sales largestSale(){
-        //code missing (calculates the sale with the largest value)
+        //calculates the sale with the largest value
         Sales max=salesHistory[0];
-
+        for(int i=0; i<salesHistory.length; i++){
+            if(salesHistory[i]!=null){
+                if (salesHistory[i].getValue() > max.getValue()){
+                    max = salesHistory[i];
+                }
+            }
+        }
         return max;
     }
 }
