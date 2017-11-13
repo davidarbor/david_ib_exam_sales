@@ -1,20 +1,23 @@
 A large company with locations in different cities has taken an OOP approach in creating an administration program that
 manages all aspects of its business. These aspects include: the sale of all of the different products that the company
-manages the salaries for managers, office staff and sales personnel.
+manages, the salaries for managers, office staff, and sales personnel.
 
 1. By making use of an example from the above scenario, distinguish between a class and an instantiation of a class.
-
+A class would be the sales personnel, and an instantiation of a class would be an individual salesperson.
 
 The different modules in the program each open up a graphical user interface (GUI). Each GUI has a similar design, but
 contains differences specific to each module.
 
 2. By giving two examples, explain how the principles of inheritance can be incorporated into the design of this
 administration program.
-
+There could be a Person class, which already has some set properties, that the office staff and sales personnel classes
+could inherit from so that the code does not have to be remade every time. The class which calculates salaries might
+also inherit some properties from the Sales class, so that it can use those values to determine each individual salary.
 
 3. Describe how the use of libraries can facilitate the development of programs like this company's administration
 program.
-
+Libraries in Java contain things like ArrayLists, which the company could use to store all instances of the SalesPerson
+class.
 
 The company employs several sales personnel to sell its products to different retailers. Each branch of the company
 keeps track of its own sales with a suite of programs that include the two classes SalesPerson and Sales. Each instance
@@ -31,9 +34,10 @@ unless there is a public accessor method that returns it.
 sales classes. Note: There is no need to include mutator or accessor methods or a constructor.
 *ATTACHED*
 
-7. Outline a negative effect that a future change in the design of the sales object might have on this suite of
+7. Outline a negative effect that a future change in the design of the Sales object might have on this suite of
 programs.
-
+A change in the Sales object would impact the SalesPerson class, as the Sales object is utilized in the SalesPerson
+class in the form of a Sales array that shows all sales made by a specific salesperson.
 
 The company employs several sales personnel. The different salesperson objects are held in the array salesPeople. The
 Main class contains various methods that operate on the SalesPerson and sales classes. The array salesPeople is declared
@@ -64,6 +68,7 @@ the largest total value.
 
 10. By making use of any previously written methods, construct the method highest(), that returns the ID of the
 salesperson whose sales have the largest total value.
+*CHECK THE CODE*
 
 11. Construct the method addSales(Sales s, String id), in the Main class, that will add a new Sales object s, to the
 salesperson with a specified ID. Note: You can assume that the ID is a valid one.
@@ -72,9 +77,9 @@ salesperson with a specified ID. Note: You can assume that the ID is a valid one
 A further class in this suite of programs is the Payroll class. This class is run at the end of each month to calculate
 each salesperson's salary, which is based on the sales that have been made during that month.
 
-12. Suggest changes that must be made to the salesperson class and/or the Sales class to allow these calculations to be
+12. Suggest changes that must be made to the SalesPerson class and/or the Sales class to allow these calculations to be
 made.
-
+SalesPerson would have a new property which is an instance of the Payroll class.
 
 13. Discuss the use of polymorphism that occurs in this suite of programs.
-
+N/A

@@ -2,6 +2,7 @@ public class SalesPerson{
     private String mID;
     private Sales[] salesHistory=new Sales[3]; //details of the different sales
     private int mCount=0; //number of sales made
+    private double mTotal=0; //getValue() multiplied by getQuantity() (see Sales class)
 
     public SalesPerson(String ID){
         mID=ID;
@@ -45,5 +46,13 @@ public class SalesPerson{
             }
         }
         return max;
+    }
+    public double totalSales(){
+        for(int i=0; i<salesHistory.length; i++){
+            if(salesHistory[i]!=null){
+                mTotal+=salesHistory[i].getValue()*salesHistory[i].getQuantity();
+            }
+        }
+        return mTotal;
     }
 }

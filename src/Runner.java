@@ -1,8 +1,8 @@
 public class Runner{
     static SalesPerson[] salesPeople=new SalesPerson[6];
     public static void main(String[] args){
-        /*the commented line at the bottom is NOT POSSIBLE, but I'm leaving it here because it was part of the code they
-        wanted us to copy for one of the questions.*/
+        /*the commented line at the bottom of the main is NOT POSSIBLE, but I'm leaving it here because it was part of
+        the code they wanted us to copy for one of the questions.*/
         salesPeople[0]=new SalesPerson("100");
         salesPeople[1]=new SalesPerson("101");
         salesPeople[2]=new SalesPerson("102");
@@ -16,15 +16,28 @@ public class Runner{
         Sales saleOne=new Sales("A400", 1200.00, 3);
         addSales(saleOne, "100");
         System.out.println(salesPeople[0].largestSale().getValue());
+        System.out.println(highest());
         //System.out.println(salesPeople[1].getSalesHistory(0).getValue());
     }
     public static void addSales(Sales s, String ID){
         for(int i=0; i<salesPeople.length; i++){
             if(salesPeople[i]!=null){
-                if (ID.equals(salesPeople[i].getID())) {
+                if(ID.equals(salesPeople[i].getID())){
                     salesPeople[i].setSalesHistory(s);
                 }
             }
         }
+    }
+    public static String highest(){
+        String str="";
+        double highestTotal=0;
+        for(int i=0; i<salesPeople.length; i++){
+            if(salesPeople[i]!=null){
+                if(salesPeople[i].totalSales()>highestTotal){
+                    str=salesPeople[i].getID();
+                }
+            }
+        }
+        return str;
     }
 }
